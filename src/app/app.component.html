@@ -1,0 +1,29 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  h1{
+    background-color: blue;
+    color: white;
+  }
+</style>
+
+<main class="main">
+  <h1 [ngStyle]="{'color':'black'}" [ngClass]="isActive ? 'active':''">app component</h1>
+  <input placeholder="enter your name" [(ngModel)]="myName"/>
+  <span>{{myName}}</span>
+  <button (click)="handleClick($event,'heyyyy')"></button>
+  <span #counts >{{counts}}</span>
+  
+  <app-my-component>
+    <h1>hey from slot content!</h1>
+  </app-my-component>
+</main>
+
+<router-outlet />
