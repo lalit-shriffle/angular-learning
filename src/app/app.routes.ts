@@ -7,15 +7,17 @@ import { DynamicRouteComponent } from './dynamic-route/dynamic-route.component';
 import { ResolveService } from './resolve.service';
 
 export const routes: Routes = [
-    {path:"first", component:MyComponentComponent,children:[
+    {
+        path:"first", component:MyComponentComponent,
+        children:[
         {path:"child1",component:Child1Component},
         {path:"child2",component: Child2Component}
-    ]},
+    ]
+    },
     {path: "second", component: ManualComponent},
     {
         path: "dynamic/:id", 
         resolve: {resolvedData: ResolveService},
-        loadComponent: ()=> import("./dynamic-route/dynamic-route.component").then((module)=>module.DynamicRouteComponent)
-
-        }
+        loadComponent: ()=> import("./dynamic-route/dynamic-route.component").then((component)=>component.DynamicRouteComponent)
+    }
 ];
