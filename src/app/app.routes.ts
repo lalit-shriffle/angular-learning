@@ -14,7 +14,8 @@ export const routes: Routes = [
     {path: "second", component: ManualComponent},
     {
         path: "dynamic/:id", 
-        component:DynamicRouteComponent,
-        resolve: {resolvedData: ResolveService}
-    }
+        resolve: {resolvedData: ResolveService},
+        loadComponent: ()=> import("./dynamic-route/dynamic-route.component").then((module)=>module.DynamicRouteComponent)
+
+        }
 ];
