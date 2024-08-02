@@ -22,10 +22,10 @@ export class AppComponent {
   @ViewChild("counts")
   countElement: ElementRef;
 
-  @HostListener("click",['$event.target'])
-  onClick(btn:MouseEvent){
-    console.log("button",btn);
-  }
+  // @HostListener("click",['$event.target'])
+  // onClick(btn:MouseEvent){
+  //   console.log("button",btn);
+  // }
 
   ngAfterViewInit(){
     console.log(this.countElement);
