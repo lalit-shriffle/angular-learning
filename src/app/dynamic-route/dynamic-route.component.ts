@@ -14,4 +14,11 @@ export class DynamicRouteComponent {
         console.log("params ",params["id"]);
       })
   }
+
+  ngOnInit(){
+    this.route.data.subscribe((resolve:any)=>{
+      const data = resolve.resolvedData;
+      console.log("data",data);
+    })
+  }
 } 

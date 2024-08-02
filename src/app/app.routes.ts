@@ -4,6 +4,7 @@ import { ManualComponent } from './manual-component/manual-component.component';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
 import { DynamicRouteComponent } from './dynamic-route/dynamic-route.component';
+import { ResolveService } from './resolve.service';
 
 export const routes: Routes = [
     {path:"first", component:MyComponentComponent,children:[
@@ -11,5 +12,9 @@ export const routes: Routes = [
         {path:"child2",component: Child2Component}
     ]},
     {path: "second", component: ManualComponent},
-    {path: "dynamic/:id", component:DynamicRouteComponent }
+    {
+        path: "dynamic/:id", 
+        component:DynamicRouteComponent,
+        resolve: {resolvedData: ResolveService}
+    }
 ];
