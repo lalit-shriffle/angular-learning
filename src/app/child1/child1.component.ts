@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, of } from 'rxjs';
 
 @Component({
@@ -24,5 +24,9 @@ export class Child1Component implements AfterViewInit {
     console.log("click",data);
    })
  }
+
+ 
+ 
+ 
 
 }
